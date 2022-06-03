@@ -17,3 +17,6 @@ ln -s $(pwd)/.vimrc $HOME/.vimrc
 
 echo "Create link '$(pwd)/.hammerspoon' to '${HOME}/.hammerspoon"
 ln -s $(pwd)/.hammerspoon $HOME/.hammerspoon
+
+echo "Create link '$(pwd)/.gitconfig' to '${HOME}/.gitconfig'"
+ln -s $(pwd)/.gitconfig $HOME/.gitconfig

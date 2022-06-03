@@ -1,0 +1,13 @@
+[user]
+	name = realsangil
+	email = tkddlf59@gmail.com
+[commit]
+	gpgSign = true
+[gpg]
+	program = /opt/homebrew/bin/gpg
+[tag]
+	gpgSign = true
+[url "git@github.com:lalaworks"]
+	insteadOf = https://github.com/lalaworks
+[url "git@github.com:directcloudlab"]
+	insteadOf = https://github.com/directcloudlab
