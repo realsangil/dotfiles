@@ -1,0 +1,40 @@
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - /opt/homebrew/bin/tmux
+
+live_config_reload: true
+
+font:
+  normal:
+    family: MesloLGMDZ Nerd Font Mono
+    style: Regular
+
+  bold:
+    family: MesloLGMDZ Nerd Font Mono
+    style: Bold
+
+  italic:
+    family: MesloLGMDZ Nerd Font Mono
+    style: Italic
+
+  bold_italic:
+    family: MesloLGMDZ Nerd Font Mono
+    style: Bold Italic
+
+  size: 14.0
+
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0
+
+  use_thin_strokes: true
+
+  builtin_box_drawing: true
+

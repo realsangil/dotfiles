@@ -1,0 +1,295 @@
+{
+    "title": "realsangil's function kyes",
+    "rules": [
+      {
+        "description": "Mouse:hyperKey",
+        "manipulators": [
+          {
+            "type": "basic",
+            "from": {
+              "pointing_button": "button4",
+              "modifiers": {
+                "optional": ["any"]
+              }
+            },
+            "to": [
+              {
+                "key_code": "fn",
+                "modifiers": [
+                  "left_shift"
+                ]
+              }
+            ],
+            "to_if_alone": {
+              "pointing_button": "button4"
+            },
+            "to_after_key_up": [
+              {
+                "set_variable": {
+                  "name": "mouse_hyperKey",
+                  "value": 0
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "description": "Press a Key Twice, right_shift - Rule - Karabiner-Elements",
+        "manipulators": [
+          {
+            "type": "basic",
+            "from": {
+              "key_code": "right_shift",
+              "modifiers": {
+                "optional": [
+                  "any"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "left_shift",
+                "modifiers": [
+                  "left_control",
+                  "left_command"
+                ]
+              }
+            ],
+            "conditions": [
+              {
+                "type": "variable_if",
+                "name": "key pressed",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "type": "basic",
+            "from": {
+              "key_code": "right_shift",
+              "modifiers": {
+                "optional": [
+                  "any"
+                ]
+              }
+            },
+            "to": [
+              {
+                "set_variable": {
+                  "name": "key pressed",
+                  "value": 1
+                }
+              },
+              {
+                "key_code": "right_shift"
+              }
+            ],
+            "description": "to_delayed_action is set to 400ms in karabiner.json",
+            "to_delayed_action": {
+              "to_if_invoked": [
+                {
+                  "set_variable": {
+                    "name": "key pressed",
+                    "value": 0
+                  }
+                }
+              ],
+              "to_if_canceled": [
+                {
+                  "set_variable": {
+                    "name": "key pressed",
+                    "value": 0
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "description": "Press a Key Twice, left_control - Rule - Karabiner-Elements",
+        "manipulators": [
+          {
+            "type": "basic",
+            "from": {
+              "key_code": "left_control",
+              "modifiers": {
+                "optional": [
+                  "any"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "left_shift",
+                "modifiers": [
+                  "left_control",
+                  "left_command"
+                ]
+              }
+            ],
+            "conditions": [
+              {
+                "type": "variable_if",
+                "name": "key pressed",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "type": "basic",
+            "from": {
+              "key_code": "left_control",
+              "modifiers": {
+                "optional": [
+                  "any"
+                ]
+              }
+            },
+            "to": [
+              {
+                "set_variable": {
+                  "name": "key pressed",
+                  "value": 1
+                }
+              },
+              {
+                "key_code": "left_control"
+              }
+            ],
+            "description": "to_delayed_action is set to 400ms in karabiner.json",
+            "to_delayed_action": {
+              "to_if_invoked": [
+                {
+                  "set_variable": {
+                    "name": "key pressed",
+                    "value": 0
+                  }
+                }
+              ],
+              "to_if_canceled": [
+                {
+                  "set_variable": {
+                    "name": "key pressed",
+                    "value": 0
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "description": "F20: HyperKey",
+        "manipulators": [
+          {
+            "type": "basic",
+            "from": {
+              "key_code": "f20",
+              "modifiers": {
+                "optional": [
+                  "any"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "left_shift",
+                "modifiers": [
+                  "left_control",
+                  "left_command"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "description": "tabFN",
+        "manipulators": [
+          {
+            "type": "basic",
+            "from": {
+              "key_code": "tab",
+              "modifiers": {
+                "optional": ["any"]
+              }
+            },
+            "to": [
+              {
+                "key_code": "left_shift",
+                "modifiers": [
+                  "left_control",
+                  "left_command"
+                ]
+              }
+            ],
+            "to_if_alone": {
+              "key_code": "tab"
+            },
+            "to_after_key_up": [
+              {
+                "set_variable": {
+                  "name": "tabfn_mode",
+                  "value": 0
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "description": "Show Desktop",
+        "manipulators": [
+          {
+            "from": {
+                "key_code": "d",
+                "modifiers": {
+                    "mandatory": [
+                        "left_option"
+                    ],
+                    "optional": [
+                        "any"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "f18"
+                }
+            ],
+            "type": "basic"
+          }
+        ]
+      },
+      {
+        "description": "Change CMD+esc to CMD+`",
+        "manipulators": [
+          {
+            "from": {
+                "key_code": "escape",
+                "modifiers": {
+                    "mandatory": [
+                        "left_command"
+                    ],
+                    "optional": [
+                        "any"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "grave_accent_and_tilde",
+                    "modifiers": [
+                      "left_command"
+                    ]
+                }
+            ],
+            "type": "basic"
+          }
+        ]
+      }
+    ]
+  }
+  
