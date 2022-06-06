@@ -31,6 +31,11 @@ for i, app in ipairs(singleapps) do
     hs.hotkey.bind(hyper, app[1], function() launch(app[2]); end)
 end
 
+-- hammerspoon reload to hyper + ]
+hs.hotkey.bind(hyper, ']', function ()
+    hs.reload()
+end)
+
 -- esc 입력 시 입력 언어를 영어로 변경
 local caps_mode = hs.hotkey.modal.new()
 local inputEnglish = "com.apple.keylayout.ABC"
@@ -62,7 +67,7 @@ do  -- input sorce changer
     }
 
     local changeInput = function()
-
+        hs.alert.closeAll()
         local current = hs.keycodes.currentSourceID()
         local nextInput = nil
         local inputSourceName = ""
@@ -84,8 +89,8 @@ do  -- input sorce changer
             textSize  = 50,
             radius = 10,
             atScreenEdge = 0,
-            fadeInDuration = 0.05,
-            fadeOutDuration = 0.05,
+            fadeInDuration = 0.15,
+            fadeOutDuration = 0.15,
             padding = nil,
         }, hs.screen.mainScreen(), 0.5)
     end
