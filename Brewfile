@@ -13,6 +13,7 @@ brew "gettext"
 brew "gnupg"
 brew "go@1.17", link: true
 brew "grep"
+brew "hugo"
 brew "jq"
 brew "neovim"
 brew "nvm"
