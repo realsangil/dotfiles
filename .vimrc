@@ -12,18 +12,24 @@ set mouse=a
 set ruler
 set showmatch
 set encoding=utf8
+
+" clipboard settings
+"
 set clipboard=unnamed
 
 """"""""""""""""""""""""""
 " 검색 관련 옵션            "
 """"""""""""""""""""""""""
 " 검색어 하이라이트
+"
 set hlsearch 
 
 " 한글자 입력할때마다 매치되는 부분 표시하기
+"
 set incsearch
 
 " 검색어 대소문자 구분 안함
+"
 set ignorecase
 
 filetype plugin indent on

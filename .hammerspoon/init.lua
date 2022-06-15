@@ -9,17 +9,15 @@ singleapps = {
     {'1', 'Google Chrome'},
     {'2', 'Safari'}, 
     {'3', 'Things3'},
-    {'4', 'Obsidian'},
+    {'4', 'Bear'},
     {'5', 'Music'},
-    -- {'5', 'Spotify'},
+    {'6', 'YT Music'},
     {'q', 'IntelliJ IDEA'},
     {'w', 'Visual Studio Code'},
     {'e', 'Sublime Text'},
     {'r', 'Paw'},
     -- {'r', 'Postman'},
     {'t', 'iTerm'},
-    -- {'t', 'Alacritty'},
-    -- {'t', 'Terminal'},
     {'a', 'Mattermost'},
     {'s', 'Tandem'},
     {'d', 'TablePlus'},
@@ -37,28 +35,28 @@ hs.hotkey.bind(hyper, ']', function ()
 end)
 
 -- esc 입력 시 입력 언어를 영어로 변경
-local caps_mode = hs.hotkey.modal.new()
-local inputEnglish = "com.apple.keylayout.ABC"
+-- local caps_mode = hs.hotkey.modal.new()
+-- local inputEnglish = "com.apple.keylayout.ABC"
 
-local on_caps_mode = function()
-    caps_mode:enter()
-end
+-- local on_caps_mode = function()
+--     caps_mode:enter()
+-- end
 
-local off_caps_mode = function()
+-- local off_caps_mode = function()
 
-    caps_mode:exit()
+--     caps_mode:exit()
 
-    local input_source = hs.keycodes.currentSourceID()
+--     local input_source = hs.keycodes.currentSourceID()
 
-    if not (input_source == inputEnglish) then
-        hs.eventtap.keyStroke({}, 'right')
-        hs.keycodes.currentSourceID(inputEnglish)
-        hs.eventtap.keyStroke({}, 'escape')
-    end
-    hs.eventtap.keyStroke({}, 'escape')
-end
+--     if not (input_source == inputEnglish) then
+--         hs.eventtap.keyStroke({}, 'right')
+--         hs.keycodes.currentSourceID(inputEnglish)
+--         hs.eventtap.keyStroke({}, 'escape')
+--     end
+--     hs.eventtap.keyStroke({}, 'escape')
+-- end
 
-hs.hotkey.bind({}, 'f13', on_caps_mode, off_caps_mode)
+-- hs.hotkey.bind({}, 'f13', on_caps_mode, off_caps_mode)
 
 do  -- input sorce changer
     local inputSource = {
@@ -92,9 +90,8 @@ do  -- input sorce changer
             fadeInDuration = 0.15,
             fadeOutDuration = 0.15,
             padding = nil,
-        }, hs.screen.mainScreen(), 0.5)
+        }, hs.screen.primaryScreen(), 0.5)
     end
 
-    -- hs.hotkey.bind({'shift'}, 'space', changeInput)
-    hs.hotkey.bind({}, 'F19', changeInput)
+    -- hs.hotkey.bind({}, 'F19', changeInput)
 end
