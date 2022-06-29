@@ -17,6 +17,9 @@ set encoding=utf8
 "
 set clipboard=unnamed
 
+noremap x "_x
+
+
 """"""""""""""""""""""""""
 " 검색 관련 옵션            "
 """"""""""""""""""""""""""
@@ -34,7 +37,7 @@ set ignorecase
 
 filetype plugin indent on
 
-let mapleader = "\<space>"
+let mapleader = ","
 nmap <leader>ve :edit ~/.vimrc<CR>
 set bs=indent,eol,start
 

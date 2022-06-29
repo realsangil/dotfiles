@@ -1,31 +1,41 @@
-"" Source your .vimrc
-source ~/.vimrc
+let mapleader = ","
 
-"" -- Suggested options --
-" Show a few lines of context around the cursor. Note that this makes the
-" text scroll if you mouse-click near the start or end of the window.
-set scrolloff=5
+set clipboard+=ideaput
+set scrolloff=999
 
-" Do incremental searching.
+" Search
 set incsearch
+set hlsearch
+set ignorecase
 
-" Don't use Ex mode, use Q for formatting.
-map Q gq
+" Appearences
+set smartindent
+set relativenumber
+set number
 
+" Shortcuts
+vmap <C-c> "+yi
+vmap <C-x> "+c
+imap <C-v> <ESC>"+pa
+" imap <S-Enter> <ESC>o
+" imap <C-S-Enter> <ESC>O
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-h> <Left>
+imap <C-l> <Right>
+noremap <leader>zz :set scrolloff=999<CR>
+noremap <leader>!zz :set scrolloff=0<CR>
 
-"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-"" Map \r to the Reformat Code action
-"map \r <Action>(ReformatCode)
+map <leader>rr <Action>(RenameElement)
+map \r <Action>(Run)
+map \d <Action>(Debug)
+map \l <Action>(RunConfiguration)
 
-"" Map <leader>d to start debug
-map <leader>rr <Action>(Run) 
-map <leader>rR <Action>(RunConfiguration)
+" Actions - Find/Show/Navigation
+map <leader>fu <Action>(FindUsages)
+map <leader>th <Action>(TypeHierarchy)
+map <leader>ch <Action>(CallHierarchy)
+map <leader>nr <Action>(RecentFiles)
+map <leader>ff <Action>(Find)
 
-"" Map <leader>d to start debug
-map <leader>dd <Action>(Debug)
-
-"" Map \b to toggle the breakpoint on the current line
-map <leader>b <Action>(ToggleLineBreakpoint)
-map <leader>i <Action>(ImplementMethods)
-map <leader>= <Action>(FileStructurePopup)
-"" Set Plugins
+map <leader>sc <Action>(StringManipulation.Group.SwitchCase)
