@@ -6,8 +6,9 @@ launch = function(appname)
 end
 
 singleapps = {
+    {'`', '1Password'},
     {'1', 'Google Chrome'},
-    {'2', 'Safari'}, 
+    {'2', 'Firefox Developer Edition'},
     {'3', 'Things3'},
     {'4', 'Bear'},
     {'5', 'Music'},
@@ -18,7 +19,7 @@ singleapps = {
     {'r', 'Paw'},
     -- {'r', 'Postman'},
     {'t', 'iTerm'},
-    {'a', 'Mattermost'},
+    {'a', 'Slack'},
     {'s', 'Tandem'},
     {'d', 'TablePlus'},
     {'f', 'Finder'},
@@ -58,10 +59,12 @@ end)
 
 -- hs.hotkey.bind({}, 'f13', on_caps_mode, off_caps_mode)
 
-do  -- input sorce changer
+do  -- input source changer
     local inputSource = {
-        english = "com.apple.keylayout.ABC",
-        korean = "com.apple.inputmethod.Korean.2SetKorean",
+        -- english = "com.apple.keylayout.ABC",
+        -- korean = "com.apple.inputmethod.Korean.2SetKorean",
+        english = "org.youknowone.inputmethod.Gureum.system", -- 구름입력기 로마자
+        korean = "org.youknowone.inputmethod.Gureum.han2", -- 구름입력기 두벌식
     }
 
     local changeInput = function()
@@ -93,5 +96,5 @@ do  -- input sorce changer
         }, hs.screen.primaryScreen(), 0.5)
     end
 
-    -- hs.hotkey.bind({}, 'F19', changeInput)
+    hs.hotkey.bind({}, 'F19', changeInput)
 end

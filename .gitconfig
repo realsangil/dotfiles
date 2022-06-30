@@ -7,7 +7,5 @@
 	program = /opt/homebrew/bin/gpg
 [tag]
 	gpgSign = true
-[url "git@github.com:lalaworks"]
-	insteadOf = https://github.com/lalaworks
-[url "git@github.com:directcloudlab"]
-	insteadOf = https://github.com/directcloudlab
+[url "git@github.com:"]
+	insteadOf = 'https://github.com/'
